@@ -20,5 +20,11 @@
   "dependencies": {
     "process": "^0.11.1",
     "util": "^0.10.3"
+  },
+  "wilton": {
+    "excludes": [
+        "test",
+        "test.js"
+    ]
   }
 }

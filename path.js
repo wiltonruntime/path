@@ -1,4 +1,5 @@
-// Copyright Joyent, Inc. and other Node contributors.
+define(function(localRequire, exports, module) { var requireOrig = require; require = localRequire;
+// // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
 // copy of this software and associated documentation files (the
@@ -22,7 +23,8 @@
 'use strict';
 
 
-var isWindows = process.platform === 'win32';
+var isInBrowser = require("is-in-browser")
+var isWindows = !isInBrowser && WILTON_requiresync("wilton/misc").isWindows();
 var util = require('util');
 
 
@@ -626,3 +628,5 @@ else /* posix */
 
 module.exports.posix = posix;
 module.exports.win32 = win32;
+
+require = requireOrig;});
